@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>NPC Card</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<link rel="stylesheet" href="Styles.css" />
+</head>
+<body>
+	<div class="card">
+		<div id="main" class="main">
+			<div id="firstRow" class="row">
+				<span id="name" class="detail"></span>
+				<span id="gender" class="detail"></span>
+				<span id="race" class="detail"></span>
+				<span id="class" class="detail"></span>
+			</div>
+			<div id="secondRow" class="row">
+			</div>
+			<div id="thirdRow" class="row">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#name").text("Name");
+			$("#gender").text("<m/f>");
+			$("#race").text("<race>");
+			$("#class").text("<class>");
+		});
+	</script>
+</body>
+</html>

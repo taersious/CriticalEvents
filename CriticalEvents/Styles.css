@@ -1,7 +1,28 @@
-﻿body {
+body {
 	color: Black;
 	border: none !important;
 	background-color: White;
 	font-family: Arial, Verdana, Tahoma !important;
 	font-size: 10pt !important;
+}
+
+.main {
+	border: 2px solid black;
+	padding: 2px;
+}
+.card {
+	position: relative;
+	width: 380px;
+}
+
+.row {
+	border-bottom: 1px dashed silver;	
+}
+
+.detail {
+	margin: 0px 10px 0px 2px;
+}
+
+.cursor-hand { 
+	cursor:pointer; color:green
 }
