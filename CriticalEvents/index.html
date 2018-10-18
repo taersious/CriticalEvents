@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>Test File</title>
+	<link rel="stylesheet" href="styles.css" />
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+
+		function generateName() {
+			var name = '';
+			var last = 0;
+			var max = getRandomArbitrary(1, 4);
+			var parts = getRandomArbitrary(1, max) + 1;
+			for (i = 0; i < parts; i++) {
+				var section = getRandomArbitrary(1, 2);
+				if (section === 1) {
+					if (last === 1) {
+						name += getVowelSection();
+					}
+					name += getConsonantSection();
+				}
+				else {
+					if (last === 2) {
+						name += getConsonantSection();
+					}
+					name += getVowelSection();
+				}
+				last = section;
+			}
+			return name.charAt(0).toUpperCase() + name.substr(1);
+		}
+
+		function getRandomArbitrary(min, max) {
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+		function getConsonantSection() {
+			var resultArray = [
+				"b",
+				"bh",
+				"bl",
+				"br",
+				"c",
+				"ch",
+				"cl",
+				"cr",
+				"d",
+				"dh",
+				"dj",
+				"dr",
+				"dw",
+				"f",
+				"fl",
+				"fr",
+				"g",
+				"gh",
+				"gl",
+				"gr",
+				"gw",
+				"h",
+				"hr",
+				"j",
+				"jh",
+				"jr",
+				"k",
+				"kh",
+				"kl",
+				"kr",
+				"kw",
+				"l",
+				"lh",
+				"ll",
+				"lr",
+				"m",
+				"mh",
+				"mm",
+				"mp",
+				"mr",
+				"n",
+				"nd",
+				"ng",
+				"nh",
+				"nk",
+				"nn",
+				"nt",
+				"nz",
+				"p",
+				"pp",
+				"q",
+				"r",
+				"rr",
+				"s",
+				"ss",
+				"t",
+				"tt",
+				"v",
+				"w",
+				"ww",
+				"x",
+				"z",
+				"zz"
+			];
+			var pick = getRandomArbitrary(1, 63);
+			return resultArray[pick-1];
+		}
+
+		function getVowelSection() {
+			var resultArray = [
+				"a",
+				"ae",
+				"ai",
+				"ao",
+				"au",
+				"e",
+				"ea",
+				"ee",
+				"ei",
+				"eo",
+				"eu",
+				"i",
+				"ia",
+				"ie",
+				"io",
+				"iu",
+				"o",
+				"oa",
+				"oe",
+				"oi",
+				"oo",
+				"ou",
+				"u",
+				"ua",
+				"ue",
+				"ui",
+				"uo"
+			];
+			var pick = getRandomArbitrary(1, 27);
+			return resultArray[pick-1];
+		}
+
+	</script>
+</head>
+<body>
+	<div id="test"></div>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#test").text(generateName());
+		});
+	</script>
+</body>
+</html>
