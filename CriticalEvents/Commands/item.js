@@ -4,40 +4,40 @@ var output = '';
 var action = '';
 var nextDice = '';
 var setIndex = 0;
-var argsArray = ["deck","wand-of-wonder"]
+var argsArray = ["deck", "wand-of-wonder"];
 
 module.exports.run = async (bot, message, args) => {
-    if ((args !== null) && (args !== '')) {
+	if (args !== null && args !== '') {
 
-        var thisArg = args.toString().toLowerCase();
-        if ((argsArray.includes(thisArg))) {
-            switch (thisArg) {
-                case "deck":
-                    action = "Drawing a card from the 'Deck of Many Minor Things!'\n"
-                    output = lookupDeckCardDrawn();
-                    break;
-                case "wand-of-wonder":
-                    action = "Pointing the 'Wand of Wonder!'\n"
-                    output = lookupWandOfWondersEffect();
-                    break;
-            }
-        }
-        else {
-            message.channel.send("That item was not found in the Tome of Great Artifacts.");
-            return;
-        }
-    }
-    else {
-        output = "In order to research that item in the Tome of Great Artifacts, you must supply a valid item name.";
-    }
-    console.log(action + output);
-   //message.channel.send("```html\n" + action + output + " \n```");
-}
+		var thisArg = args.toString().toLowerCase();
+		if (argsArray.includes(thisArg)) {
+			switch (thisArg) {
+				case "deck":
+					action = "Drawing a card from the 'Deck of Many Minor Things!'\n"
+					output = lookupDeckCardDrawn();
+					break;
+				case "wand-of-wonder":
+					action = "Pointing the 'Wand of Wonder!'\n"
+					output = lookupWandOfWondersEffect();
+					break;
+			}
+		}
+		else {
+			message.channel.send("That item was not found in the Tome of Great Artifacts.");
+			return;
+		}
+	}
+	else {
+		output = "In order to research that item in the Tome of Great Artifacts, you must supply a valid item name.";
+	}
+	console.log(action + output);
+	//message.channel.send("```html\n" + action + output + " \n```");
+};
 
 
 module.exports.help = {
-    name: "item"
-}
+	name: "item"
+};
 
 function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;

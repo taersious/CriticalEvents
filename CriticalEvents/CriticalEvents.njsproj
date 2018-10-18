@@ -13,7 +13,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c5657f61-ce64-45e8-8389-c303873d96b0</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.js</StartupFile>
+    <StartupFile>bot.js</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -41,6 +41,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Commands\item.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\npc.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Commands\ping.js" />

@@ -5,21 +5,21 @@ var nextDice = '';
 var setIndex = 0;
 
 module.exports.run = async (bot, message, args) => {
-    if ((args == null) || (args == '')) {
+	if (args === null || args === '') {
 
-        var roll = getRandomArbitrary(1, 100);
-        output = lookupDeckCardDrew(roll);
-    }
-    else {
-        output = "nothing to do!";
-    }
-    message.channel.send("```html\nDrawing a card from the 'Deck of Many Minor Things!'\n" + output + " \n```");
-}
+		var roll = getRandomArbitrary(1, 100);
+		output = lookupDeckCardDrew(roll);
+	}
+	else {
+		output = "nothing to do!";
+	}
+	message.channel.send("```html\nDrawing a card from the 'Deck of Many Minor Things!'\n" + output + " \n```");
+};
 
 
 module.exports.help = {
-    name: "deck"
-}
+	name: "deck"
+};
 
 function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;

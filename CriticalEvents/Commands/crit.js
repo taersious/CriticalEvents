@@ -5,9 +5,9 @@ var nextDice = '';
 var setIndex = 0;
 
 module.exports.run = async (bot, message, args) => {
-    if ((args !== null) && (args !== ''))
+    if (args !== null && args !== '')
     {
-        if ((args.toString() !== 'hit') && (args.toString() !== 'miss')) {
+        if (args.toString() !== 'hit' && args.toString() !== 'miss') {
             message.channel.send("Command should match pattern '-crit <hit\\miss>'");
             return;
         }
@@ -24,8 +24,8 @@ module.exports.run = async (bot, message, args) => {
 };
 
 module.exports.help = {
-    name: "crit"
-}
+	name: "crit"
+};
 
 
 function getRandomArbitrary(min, max) {
