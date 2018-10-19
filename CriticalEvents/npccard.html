@@ -11,20 +11,54 @@
 				<span id="name" class="detail"></span>
 				<span id="gender" class="detail"></span>
 				<span id="race" class="detail"></span>
+				<span id="alignment" class="detail"></span>
 				<span id="class" class="detail"></span>
 			</div>
 			<div id="secondRow" class="row">
+				<span id="hitpoints" class="detail"></span>
+				<span class="detail">&nbsp; &nbsp;</span>
+				<span id="armourclass" class="detail"></span>
+				<span class="detail">&nbsp; &nbsp;</span>
+				<span id="speed" class="detail"></span>
+				<span class="detail">&nbsp; &nbsp;</span>
+				<span id="special" class="detail"></span>
+			</div>			
+			<div id="thirdRow" class="row indent">
+				<br />
+				Str:<span id="str" class="detail stat"></span>
+				Dex:<span id="dex" class="detail stat"></span>
+				Con:<span id="con" class="detail stat"></span>
+				<br />
+				Int:<span id="int" class="detail stat"></span>
+				Wis:<span id="wis" class="detail stat"></span>
+				Chr:<span id="chr" class="detail stat"></span>
+				<br /><br />
 			</div>
-			<div id="thirdRow" class="row">
+			<div id="forthRow" class="row">
+				<span id="description" class="detail"></span>
+				<br />
+				<div><br />&nbsp;</div>
 			</div>
 		</div>
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function () {
-			$("#name").text("Name");
+			$("#name").text("<name>");
 			$("#gender").text("<m/f>");
 			$("#race").text("<race>");
+			$("#alignment").text("<alignment>");
 			$("#class").text("<class>");
+			$("#hitpoints").text("<hp>");
+			$("#armourclass").text("<ac>");
+			$("#speed").text("<movement>");
+			$("#special").text("<special>");
+			$("#str").text("<str>");
+			$("#dex").text("<dex>");
+			$("#con").text("<con>");
+			$("#int").text("<int>");
+			$("#wis").text("<wis>");
+			$("#chr").text("<chr>");
+			$("#description").text("<notes>");
 		});
 	</script>
 </body>

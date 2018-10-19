@@ -12,15 +12,24 @@ body {
 }
 .card {
 	position: relative;
-	width: 380px;
+	width: 398px;
 }
 
 .row {
-	border-bottom: 1px dashed silver;	
+	border-bottom: 1px dashed silver;
+	min-height: 28px;
+}
+
+.indent {
+	margin-left:20px;
 }
 
 .detail {
-	margin: 0px 10px 0px 2px;
+	margin: 0px 8px 0px 2px;
+}
+
+.stat {
+	background-color: #dcdcdc;
 }
 
 .cursor-hand { 

@@ -11,28 +11,105 @@
 			var name = '';
 			var last = 0;
 			var max = getRandomArbitrary(1, 4);
-			var parts = getRandomArbitrary(1, max) + 1;
+			var parts = getRandomArbitrary(1, max);
 			for (i = 0; i < parts; i++) {
 				var section = getRandomArbitrary(1, 2);
 				if (section === 1) {
-					if (last === 1) {
+					if (name.length === 0) {
+						getFirstConsonant();
+					}
+					if (last === 1 && parts < 3) {
 						name += getVowelSection();
 					}
-					name += getConsonantSection();
+					else {
+						if (section > 1) {
+							name += " ";
+						}
+						name += getConsonantSection();
+					}					
 				}
 				else {
-					if (last === 2) {
+					if (last === 2 && parts < 3) {
 						name += getConsonantSection();
+					}
+					else {
+						if (section > 1) {
+							name += " ";
+						}
 					}
 					name += getVowelSection();
 				}
 				last = section;
 			}
+			name = name.trim();
 			return name.charAt(0).toUpperCase() + name.substr(1);
 		}
 
 		function getRandomArbitrary(min, max) {
 			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+		function getFirstConsonant() {
+			var resultArray = [
+				"B",
+				"Bh",
+				"Bl",
+				"Br",
+				"C",
+				"Ch",
+				"Cl",
+				"Cr",
+				"D",
+				"Dh",
+				"Dj",
+				"Dr",
+				"Dw",
+				"F",
+				"Fl",
+				"Fr",
+				"G",
+				"Gh",
+				"Gl",
+				"Gr",
+				"Gw",
+				"H",
+				"Hr",
+				"J",
+				"Jh",
+				"Jr",
+				"K",
+				"Kh",
+				"Kl",
+				"Kr",
+				"Kw",
+				"L",
+				"Lh",
+				"Lr",
+				"M",
+				"Mh",
+				"Mp",
+				"Mr",
+				"N",
+				"Nd",
+				"Ng",
+				"Nh",
+				"Nk",
+				"Nn",
+				"Nt",
+				"Nz",
+				"P",
+				"Q",
+				"R",
+				"S",
+				"T",
+				"V",
+				"W",
+				"X",
+				"Z",
+			];
+			var pick = getRandomArbitrary(1, 55);
+			return resultArray[pick - 1];
+
 		}
 
 		function getConsonantSection() {
