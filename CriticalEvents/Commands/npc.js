@@ -131,8 +131,9 @@ function getConsonantSection() {
 		"z",
 		"zz"
 	];
-	var pick = getRandomArbitrary(1, 61);
-	return resultArray[pick];
+    var pick = getRandomArbitrary(1, 61);
+    var consonant = resultArray[parseInt(pick)];
+    return consonant;
 }
 
 function getVowelSection() {
@@ -165,7 +166,8 @@ function getVowelSection() {
 		"ui",
 		"uo"
 	];
-	var pick = getRandomArbitrary(1, 27);
-	return resultArray[pick];
+    var pick = getRandomArbitrary(1, 27);
+    var vowel = resultArray[parseInt(pick)];
+	return vowel;
 }
 

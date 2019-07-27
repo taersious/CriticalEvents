@@ -55,6 +55,9 @@
     </Compile>
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
+    <Content Include=".env">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="config.json">
       <SubType>Code</SubType>
     </Content>

@@ -1,16 +1,17 @@
-﻿const Discord = require('discord.js');
+﻿const de = require('dotenv').config();
+const discord = require('discord.js');
 const config = require('./config.json');
-const bot = new Discord.Client({ disableEveryone: true });
+const bot = new discord.Client({ disableEveryone: true });
 const fs = require("fs");
 
 var logger = require('winston');
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
-    colorize: true
+	colorize: true
 });
 logger.level = 'debug';
 
-bot.commands = new Discord.Collection();
+bot.commands = new discord.Collection();
 
 fs.readdir("./Commands/", (err, files) => {
 	if (err) console.log(err);
@@ -21,16 +22,17 @@ fs.readdir("./Commands/", (err, files) => {
 		return;
 	}
 
-	jsfile.forEach((f, i) => {
-		let props = require(`./Commands/${f}`);
+    jsfile.forEach((f, i) => {
+        var thisCmd = `./Commands/${f}`;
+        let props = require(thisCmd);
 		console.log(`Command: ${f} loaded!`);
 		bot.commands.set(props.help.name, props);
 	});
 });
 
 bot.on('ready', async () => {
-    console.log(`${bot.user.username} is online.`);
-    bot.user.setActivity("Prefix is '-' ", { type: "WATCHING" });
+	console.log(`${bot.user.username} is online.`);
+	bot.user.setActivity("Prefix is '-' ", { type: "WATCHING" });
 });
 
 bot.on('message', async message => {
@@ -46,5 +48,5 @@ bot.on('message', async message => {
 	if (commandfile) commandfile.run(bot, message, args);
 });
 
-// Initialize Discord Bot
-bot.login(config.token);
+// Initialize Bot
+bot.login(process.env.QPC);

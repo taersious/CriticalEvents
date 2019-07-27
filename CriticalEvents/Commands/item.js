@@ -13,11 +13,11 @@ module.exports.run = async (bot, message, args) => {
 		if (argsArray.includes(thisArg)) {
 			switch (thisArg) {
 				case "deck":
-					action = "Drawing a card from the 'Deck of Many Minor Things!'\n"
+                    action = "Drawing a card from the 'Deck of Many Minor Things!'\n";
 					output = lookupDeckCardDrawn();
 					break;
 				case "wand-of-wonder":
-					action = "Pointing the 'Wand of Wonder!'\n"
+                    action = "Pointing the 'Wand of Wonder!'\n";
 					output = lookupWandOfWondersEffect();
 					break;
 			}
@@ -75,11 +75,11 @@ function lookupDeckCardDrawn() {
     ];
 
     for (var i = numberArray.length; i >= 0; i--) {
-        if (roll <= numberArray[i]) {
+        if (roll <= numberArray[parseInt(i)]) {
             setIndex = i;
         }
     }
-    return resultArray[setIndex];
+    return resultArray[parseInt(setIndex)];
 }
 
 function lookupWandOfWondersEffect() {
@@ -112,11 +112,11 @@ function lookupWandOfWondersEffect() {
     ];
 
     for (var i = numberArray.length; i >= 0; i--) {
-        if (roll <= numberArray[i]) {
+        if (roll <= numberArray[parseInt(i)]) {
             setIndex = i;
         }
     }
-    return resultArray[setIndex];
+    return resultArray[parseInt(setIndex)];
 }
 
 /* Bag of Beans
