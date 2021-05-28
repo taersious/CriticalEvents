@@ -11,7 +11,7 @@
     "pug": "^3.0.1",
     "serve-favicon": "^2.3.0",
     "winston": "^3.1.0",
-    "ws": ">=3.3.1"
+    "ws": ">=7.4.5"
   },
   "description": "Generate a random critical hit or miss",
   "name": "criticalevents",
